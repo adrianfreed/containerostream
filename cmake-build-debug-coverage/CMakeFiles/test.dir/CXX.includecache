@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/adrian2013/CLionProjects/test/container_o_stream.h
+iostream
+-
+array
+-
+vector
+-
+set
+-
+unordered_set
+-
+map
+-
+unordered_map
+-
+tuple
+-
+deque
+-
+list
+-
+forward_list
+-
+
+/Users/adrian2013/CLionProjects/test/main.cpp
+container_o_stream.h
+/Users/adrian2013/CLionProjects/test/container_o_stream.h
+

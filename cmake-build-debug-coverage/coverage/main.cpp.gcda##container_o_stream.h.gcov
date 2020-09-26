@@ -1,0 +1,462 @@
+        -:    0:Source:/Users/adrian2013/CLionProjects/test/container_o_stream.h
+        -:    0:Graph:/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/test.dir/main.cpp.gcno
+        -:    0:Data:/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/test.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by AdrianFreed on 9/24/20.
+        -:    3:// << overloads for printing containers
+        -:    4:// requires C++17
+        -:    5://
+        -:    6:
+        -:    7:#ifndef CONTAINER_O_STREAM_H
+        -:    8:#define CONTAINER_O_STREAM_H
+        -:    9:#include <iostream>
+        -:   10:#include <array>
+        -:   11:#include <vector>
+        -:   12:#include <set>
+        -:   13:#include <unordered_set>
+        -:   14:#include <map>
+        -:   15:#include <unordered_map>
+        -:   16:#include <tuple>
+        -:   17:#include <deque>
+        -:   18:#include <list>
+        -:   19:#include <forward_list>
+        -:   20:
+        -:   21://Pairs
+        -:   22:template<typename TA, typename TB>
+        3:   23:auto &operator<<(std::ostream &os, const std::pair<TA, TB> &p) {
+        3:   24:    os << '(' << p.first << ',' << p.second << ')';
+        3:   25:    return os;
+        -:   26:}
+------------------
+_ZlsIiPKcERDaRSoRKSt4pairIT_T0_E:
+        1:   23:auto &operator<<(std::ostream &os, const std::pair<TA, TB> &p) {
+        1:   24:    os << '(' << p.first << ',' << p.second << ')';
+        1:   24-block  0
+        1:   25:    return os;
+        -:   26:}
+------------------
+_ZlsIiiERDaRSoRKSt4pairIT_T0_E:
+        2:   23:auto &operator<<(std::ostream &os, const std::pair<TA, TB> &p) {
+        2:   24:    os << '(' << p.first << ',' << p.second << ')';
+        2:   24-block  0
+        2:   25:    return os;
+        -:   26:}
+------------------
+        -:   27:
+        -:   28://Tuples
+        -:   29:// variadic template metaprogram to iterate over the tuple elements
+        -:   30:// requires C++17, replace with messier folds if using earlier version
+        -:   31:template<size_t I = 0, typename... Tp>
+        4:   32:void tuple_element_print(const std::tuple<Tp...> &t, std::ostream &os) {
+        4:   33:    os << std::get<I>(t);
+        -:   34:    if constexpr(I + 1 != sizeof...(Tp)) {
+        3:   35:        os << ", ";
+        3:   36:        tuple_element_print<I + 1>(t, os);
+        -:   37:    }
+        4:   38:}
+------------------
+_Z19tuple_element_printILm3EJPKcidSt4pairIiS1_EEEvRKSt5tupleIJDpT0_EERSo:
+        1:   32:void tuple_element_print(const std::tuple<Tp...> &t, std::ostream &os) {
+        1:   33:    os << std::get<I>(t);
+        1:   33-block  0
+        -:   34:    if constexpr(I + 1 != sizeof...(Tp)) {
+        -:   35:        os << ", ";
+        -:   36:        tuple_element_print<I + 1>(t, os);
+        -:   37:    }
+        1:   38:}
+------------------
+_Z19tuple_element_printILm2EJPKcidSt4pairIiS1_EEEvRKSt5tupleIJDpT0_EERSo:
+        1:   32:void tuple_element_print(const std::tuple<Tp...> &t, std::ostream &os) {
+        1:   33:    os << std::get<I>(t);
+        1:   33-block  0
+        -:   34:    if constexpr(I + 1 != sizeof...(Tp)) {
+        1:   35:        os << ", ";
+        1:   36:        tuple_element_print<I + 1>(t, os);
+        -:   37:    }
+        1:   38:}
+------------------
+_Z19tuple_element_printILm1EJPKcidSt4pairIiS1_EEEvRKSt5tupleIJDpT0_EERSo:
+        1:   32:void tuple_element_print(const std::tuple<Tp...> &t, std::ostream &os) {
+        1:   33:    os << std::get<I>(t);
+        1:   33-block  0
+        -:   34:    if constexpr(I + 1 != sizeof...(Tp)) {
+        1:   35:        os << ", ";
+        1:   36:        tuple_element_print<I + 1>(t, os);
+        -:   37:    }
+        1:   38:}
+------------------
+_Z19tuple_element_printILm0EJPKcidSt4pairIiS1_EEEvRKSt5tupleIJDpT0_EERSo:
+        1:   32:void tuple_element_print(const std::tuple<Tp...> &t, std::ostream &os) {
+        1:   33:    os << std::get<I>(t);
+        1:   33-block  0
+        -:   34:    if constexpr(I + 1 != sizeof...(Tp)) {
+        1:   35:        os << ", ";
+        1:   36:        tuple_element_print<I + 1>(t, os);
+        -:   37:    }
+        1:   38:}
+------------------
+        -:   39:
+        -:   40:template<typename ...Types>
+        1:   41:auto &operator<<(std::ostream &os, const std::tuple<Types ...> &t) {
+        1:   42:    os << "(T ";
+        1:   42-block  0
+        1:   43:    tuple_element_print(t, os);
+        1:   44:    os << ")";
+        1:   45:    return os;
+        -:   46:}
+        -:   47:
+        -:   48:namespace CONTAINERSTREAM {
+        -:   49:
+        -:   50:
+        -:   51://Maps
+        -:   52:    template<typename C>
+        3:   53:    std::ostream &output(std::ostream &os, C &v, const char *first, const char *separator, const char *last) {
+        3:   54:        os << first;
+       10:   55:        for (auto it = v.cbegin(); it != v.cend(); ++it) {
+        7:   56:            os << it->first << ':' << it->second;
+        7:   57:            if (std::next(it) != v.cend())
+        4:   58:                os << separator;
+        -:   59:        }
+        3:   60:        os << last;
+        3:   61:        return os;
+        -:   62:    }
+------------------
+_ZN15CONTAINERSTREAM6outputIKSt8multimapIciSt4lessIcESaISt4pairIKciEEEEERSoSA_RT_PS5_SD_SD_:
+        1:   53:    std::ostream &output(std::ostream &os, C &v, const char *first, const char *separator, const char *last) {
+        1:   54:        os << first;
+        1:   54-block  0
+        4:   55:        for (auto it = v.cbegin(); it != v.cend(); ++it) {
+        4:   55-block  0
+        3:   55-block  1
+        3:   56:            os << it->first << ':' << it->second;
+        3:   56-block  0
+        3:   56-block  1
+        3:   56-block  2
+        3:   57:            if (std::next(it) != v.cend())
+        3:   57-block  0
+        3:   57-block  1
+    $$$$$:   57-block  2
+        2:   58:                os << separator;
+        2:   58-block  0
+        -:   59:        }
+        1:   60:        os << last;
+        1:   60-block  0
+        1:   61:        return os;
+        1:   61-block  0
+        -:   62:    }
+------------------
+_ZN15CONTAINERSTREAM6outputIKSt13unordered_mapIciSt4hashIcESt8equal_toIcESaISt4pairIKciEEEEERSoSC_RT_PS7_SF_SF_:
+        1:   53:    std::ostream &output(std::ostream &os, C &v, const char *first, const char *separator, const char *last) {
+        1:   54:        os << first;
+        1:   54-block  0
+        3:   55:        for (auto it = v.cbegin(); it != v.cend(); ++it) {
+        3:   55-block  0
+        2:   55-block  1
+        2:   56:            os << it->first << ':' << it->second;
+        2:   56-block  0
+        2:   56-block  1
+        2:   56-block  2
+        2:   57:            if (std::next(it) != v.cend())
+        2:   57-block  0
+        2:   57-block  1
+    $$$$$:   57-block  2
+        1:   58:                os << separator;
+        1:   58-block  0
+        -:   59:        }
+        1:   60:        os << last;
+        1:   60-block  0
+        1:   61:        return os;
+        1:   61-block  0
+        -:   62:    }
+------------------
+_ZN15CONTAINERSTREAM6outputIKSt3mapIciSt4lessIcESaISt4pairIKciEEEEERSoSA_RT_PS5_SD_SD_:
+        1:   53:    std::ostream &output(std::ostream &os, C &v, const char *first, const char *separator, const char *last) {
+        1:   54:        os << first;
+        1:   54-block  0
+        3:   55:        for (auto it = v.cbegin(); it != v.cend(); ++it) {
+        3:   55-block  0
+        2:   55-block  1
+        2:   56:            os << it->first << ':' << it->second;
+        2:   56-block  0
+        2:   56-block  1
+        2:   56-block  2
+        2:   57:            if (std::next(it) != v.cend())
+        2:   57-block  0
+        2:   57-block  1
+    $$$$$:   57-block  2
+        1:   58:                os << separator;
+        1:   58-block  0
+        -:   59:        }
+        1:   60:        os << last;
+        1:   60-block  0
+        1:   61:        return os;
+        1:   61-block  0
+        -:   62:    }
+------------------
+        -:   63:}
+        -:   64:
+        -:   65:template<typename T, typename Tbis>
+        1:   66:std::ostream &operator<<(std::ostream &os, const std::unordered_map<T, Tbis> &v) {
+        1:   67:    return CONTAINERSTREAM::output(os, v, "[Unorderedmap ", ", ", "]");
+        1:   67-block  0
+        -:   68:}
+        -:   69:
+        -:   70:template<typename T, typename Tbis>
+        1:   71:std::ostream &operator<<(std::ostream &os, const std::map<T, Tbis> &v) {
+        1:   72:    return CONTAINERSTREAM::output(os, v, "[Map ", ", ", "]");
+        1:   72-block  0
+        -:   73:}
+        -:   74:
+        -:   75:template<typename T, typename Tbis>
+        1:   76:std::ostream &operator<<(std::ostream &os, const std::multimap<T, Tbis> &v) {
+        1:   77:    return CONTAINERSTREAM::output(os, v, "[Multimap ", ", ", "]");
+        1:   77-block  0
+        -:   78:}
+        -:   79:
+        -:   80:namespace CONTAINERSTREAM {
+        -:   81:
+        -:   82:// The Rest
+        -:   83:    template<typename C>
+        -:   84:    std::ostream &
+        8:   85:    vectorarrayoutput(std::ostream &os, C &v, const char *first, const char *separator, const char *last) {
+        8:   86:        os << first;
+       49:   87:        for (auto it = v.cbegin(); it != v.cend(); ++it) {
+       41:   88:            os << *it;
+       41:   89:            if (std::next(it) != v.cend())
+       33:   90:                os << separator;
+        -:   91:        }
+        8:   92:        os << last;
+        8:   93:        return os;
+        -:   94:    }
+------------------
+_ZN15CONTAINERSTREAM17vectorarrayoutputIKSt8multisetIiSt4lessIiESaIiEEEERSoS7_RT_PKcSB_SB_:
+        1:   85:    vectorarrayoutput(std::ostream &os, C &v, const char *first, const char *separator, const char *last) {
+        1:   86:        os << first;
+        1:   86-block  0
+        8:   87:        for (auto it = v.cbegin(); it != v.cend(); ++it) {
+        8:   87-block  0
+        7:   87-block  1
+        7:   88:            os << *it;
+        7:   88-block  0
+        7:   89:            if (std::next(it) != v.cend())
+        7:   89-block  0
+        7:   89-block  1
+    $$$$$:   89-block  2
+        6:   90:                os << separator;
+        6:   90-block  0
+        -:   91:        }
+        1:   92:        os << last;
+        1:   92-block  0
+        1:   93:        return os;
+        1:   93-block  0
+        -:   94:    }
+------------------
+_ZN15CONTAINERSTREAM17vectorarrayoutputIKSt3setIiSt4lessIiESaIiEEEERSoS7_RT_PKcSB_SB_:
+        1:   85:    vectorarrayoutput(std::ostream &os, C &v, const char *first, const char *separator, const char *last) {
+        1:   86:        os << first;
+        1:   86-block  0
+        7:   87:        for (auto it = v.cbegin(); it != v.cend(); ++it) {
+        7:   87-block  0
+        6:   87-block  1
+        6:   88:            os << *it;
+        6:   88-block  0
+        6:   89:            if (std::next(it) != v.cend())
+        6:   89-block  0
+        6:   89-block  1
+    $$$$$:   89-block  2
+        5:   90:                os << separator;
+        5:   90-block  0
+        -:   91:        }
+        1:   92:        os << last;
+        1:   92-block  0
+        1:   93:        return os;
+        1:   93-block  0
+        -:   94:    }
+------------------
+_ZN15CONTAINERSTREAM17vectorarrayoutputIKSt6vectorIiSaIiEEEERSoS5_RT_PKcS9_S9_:
+        1:   85:    vectorarrayoutput(std::ostream &os, C &v, const char *first, const char *separator, const char *last) {
+        1:   86:        os << first;
+        1:   86-block  0
+        6:   87:        for (auto it = v.cbegin(); it != v.cend(); ++it) {
+        6:   87-block  0
+        5:   87-block  1
+        5:   88:            os << *it;
+        5:   88-block  0
+        5:   89:            if (std::next(it) != v.cend())
+        5:   89-block  0
+        5:   89-block  1
+    $$$$$:   89-block  2
+        4:   90:                os << separator;
+        4:   90-block  0
+        -:   91:        }
+        1:   92:        os << last;
+        1:   92-block  0
+        1:   93:        return os;
+        1:   93-block  0
+        -:   94:    }
+------------------
+_ZN15CONTAINERSTREAM17vectorarrayoutputIKSt5dequeIiSaIiEEEERSoS5_RT_PKcS9_S9_:
+        1:   85:    vectorarrayoutput(std::ostream &os, C &v, const char *first, const char *separator, const char *last) {
+        1:   86:        os << first;
+        1:   86-block  0
+        6:   87:        for (auto it = v.cbegin(); it != v.cend(); ++it) {
+        6:   87-block  0
+        5:   87-block  1
+        5:   88:            os << *it;
+        5:   88-block  0
+        5:   89:            if (std::next(it) != v.cend())
+        5:   89-block  0
+        5:   89-block  1
+    $$$$$:   89-block  2
+    $$$$$:   89-block  3
+        4:   90:                os << separator;
+        4:   90-block  0
+        -:   91:        }
+        1:   92:        os << last;
+        1:   92-block  0
+        1:   93:        return os;
+        1:   93-block  0
+        -:   94:    }
+------------------
+_ZN15CONTAINERSTREAM17vectorarrayoutputIKSt12forward_listIiSaIiEEEERSoS5_RT_PKcS9_S9_:
+        1:   85:    vectorarrayoutput(std::ostream &os, C &v, const char *first, const char *separator, const char *last) {
+        1:   86:        os << first;
+        1:   86-block  0
+        6:   87:        for (auto it = v.cbegin(); it != v.cend(); ++it) {
+        6:   87-block  0
+        5:   87-block  1
+        5:   88:            os << *it;
+        5:   88-block  0
+        5:   89:            if (std::next(it) != v.cend())
+        5:   89-block  0
+        5:   89-block  1
+    $$$$$:   89-block  2
+        4:   90:                os << separator;
+        4:   90-block  0
+        -:   91:        }
+        1:   92:        os << last;
+        1:   92-block  0
+        1:   93:        return os;
+        1:   93-block  0
+        -:   94:    }
+------------------
+_ZN15CONTAINERSTREAM17vectorarrayoutputIKNSt7__cxx114listIiSaIiEEEEERSoS6_RT_PKcSA_SA_:
+        1:   85:    vectorarrayoutput(std::ostream &os, C &v, const char *first, const char *separator, const char *last) {
+        1:   86:        os << first;
+        1:   86-block  0
+        6:   87:        for (auto it = v.cbegin(); it != v.cend(); ++it) {
+        6:   87-block  0
+        5:   87-block  1
+        5:   88:            os << *it;
+        5:   88-block  0
+        5:   89:            if (std::next(it) != v.cend())
+        5:   89-block  0
+        5:   89-block  1
+    $$$$$:   89-block  2
+        4:   90:                os << separator;
+        4:   90-block  0
+        -:   91:        }
+        1:   92:        os << last;
+        1:   92-block  0
+        1:   93:        return os;
+        1:   93-block  0
+        -:   94:    }
+------------------
+_ZN15CONTAINERSTREAM17vectorarrayoutputIKSt5arrayISt4pairIiiELm2EEEERSoS6_RT_PKcSA_SA_:
+        1:   85:    vectorarrayoutput(std::ostream &os, C &v, const char *first, const char *separator, const char *last) {
+        1:   86:        os << first;
+        1:   86-block  0
+        3:   87:        for (auto it = v.cbegin(); it != v.cend(); ++it) {
+        3:   87-block  0
+        2:   87-block  1
+        2:   88:            os << *it;
+        2:   88-block  0
+        2:   89:            if (std::next(it) != v.cend())
+        1:   90:                os << separator;
+        1:   90-block  0
+        -:   91:        }
+        1:   92:        os << last;
+        1:   92-block  0
+        1:   93:        return os;
+        -:   94:    }
+------------------
+_ZN15CONTAINERSTREAM17vectorarrayoutputIKSt5arrayIiLm6EEEERSoS4_RT_PKcS8_S8_:
+        1:   85:    vectorarrayoutput(std::ostream &os, C &v, const char *first, const char *separator, const char *last) {
+        1:   86:        os << first;
+        1:   86-block  0
+        7:   87:        for (auto it = v.cbegin(); it != v.cend(); ++it) {
+        7:   87-block  0
+        6:   87-block  1
+        6:   88:            os << *it;
+        6:   88-block  0
+        6:   89:            if (std::next(it) != v.cend())
+        5:   90:                os << separator;
+        5:   90-block  0
+        -:   91:        }
+        1:   92:        os << last;
+        1:   92-block  0
+        1:   93:        return os;
+        -:   94:    }
+------------------
+        -:   95:
+        -:   96:}
+        -:   97:
+        -:   98:// There may appear to be a lot of repetition in these functions
+        -:   99:// The idea behind that is that you are invited to change the styling of
+        -:  100:// each separator and bracket according to your own aesthetics or conventions
+        -:  101:template<typename T, std::size_t N>
+        2:  102:auto &operator<<(std::ostream &os, const std::array<T, N> &a) {
+        2:  103:    return CONTAINERSTREAM::vectorarrayoutput(os, a, "[Array ", ", ", "]");
+        -:  104:}
+------------------
+_ZlsISt4pairIiiELm2EERDaRSoRKSt5arrayIT_XT0_EE:
+        1:  102:auto &operator<<(std::ostream &os, const std::array<T, N> &a) {
+        1:  103:    return CONTAINERSTREAM::vectorarrayoutput(os, a, "[Array ", ", ", "]");
+        1:  103-block  0
+        -:  104:}
+------------------
+_ZlsIiLm6EERDaRSoRKSt5arrayIT_XT0_EE:
+        1:  102:auto &operator<<(std::ostream &os, const std::array<T, N> &a) {
+        1:  103:    return CONTAINERSTREAM::vectorarrayoutput(os, a, "[Array ", ", ", "]");
+        1:  103-block  0
+        -:  104:}
+------------------
+        -:  105:
+        -:  106:template<typename T>
+        1:  107:std::ostream &operator<<(std::ostream &os, const std::vector<T> &v) {
+        1:  108:    return CONTAINERSTREAM::vectorarrayoutput(os, v, "[Vector ", ", ", "]");
+        1:  108-block  0
+        -:  109:}
+        -:  110:
+        -:  111:template<typename T>
+        1:  112:std::ostream &operator<<(std::ostream &os, const std::set<T> &v) {
+        1:  113:    return CONTAINERSTREAM::vectorarrayoutput(os, v, "[Set ", ", ", "]");
+        1:  113-block  0
+        -:  114:}
+        -:  115:
+        -:  116:template<typename T>
+        1:  117:std::ostream &operator<<(std::ostream &os, const std::multiset<T> &v) {
+        1:  118:    return CONTAINERSTREAM::vectorarrayoutput(os, v, "[Multiset ", ", ", "]");
+        1:  118-block  0
+        -:  119:}
+        -:  120:
+        -:  121:template<typename T>
+        1:  122:std::ostream &operator<<(std::ostream &os, const std::list<T> &l) {
+        1:  123:    return CONTAINERSTREAM::vectorarrayoutput(os, l, "(List ", ", ", ")");
+        1:  123-block  0
+        -:  124:}
+        -:  125:
+        -:  126:template<typename T>
+        1:  127:std::ostream &operator<<(std::ostream &os, const std::forward_list<T> &l) {
+        1:  128:    return CONTAINERSTREAM::vectorarrayoutput(os, l, "(ForwardList ", ", ", ")");
+        1:  128-block  0
+        -:  129:}
+        -:  130:
+        -:  131:template<typename T>
+        1:  132:std::ostream &operator<<(std::ostream &os, const std::deque<T> &d) {
+        1:  133:    return CONTAINERSTREAM::vectorarrayoutput(os, d, "(Deque ", ", ", ")");
+        1:  133-block  0
+        -:  134:}
+        -:  135:
+        -:  136:#endif //TEST_CONTAINER_O_STREAM_H

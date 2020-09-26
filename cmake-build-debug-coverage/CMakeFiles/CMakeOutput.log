@@ -1,0 +1,476 @@
+The system is: Darwin - 15.6.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/local/bin/gcc-10 
+Build flags: --coverage
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.gcno"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/3.17.3/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/local/bin/g++-10 
+Build flags: --coverage
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.gcno"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/3.17.3/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/local/bin/gmake cmTC_821df/fast && /opt/local/bin/gmake  -f CMakeFiles/cmTC_821df.dir/build.make CMakeFiles/cmTC_821df.dir/build
+gmake[1]: Entering directory '/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_821df.dir/testCCompiler.c.o
+/usr/local/bin/gcc-10   --coverage    -o CMakeFiles/cmTC_821df.dir/testCCompiler.c.o   -c /Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_821df
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_821df.dir/link.txt --verbose=1
+/usr/local/bin/gcc-10 --coverage  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_821df.dir/testCCompiler.c.o  -o cmTC_821df 
+gmake[1]: Leaving directory '/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/local/bin/gmake cmTC_8bfaf/fast && /opt/local/bin/gmake  -f CMakeFiles/cmTC_8bfaf.dir/build.make CMakeFiles/cmTC_8bfaf.dir/build
+gmake[1]: Entering directory '/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o
+/usr/local/bin/gcc-10   --coverage    -v -Wl,-v -o CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o   -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/local/bin/gcc-10
+Target: x86_64-apple-darwin15
+Configured with: ../configure --build=x86_64-apple-darwin15 --prefix=/usr/local/Cellar/gcc/10.2.0 --libdir=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10 --disable-nls --enable-checking=release --enable-languages=c,c++,objc,obj-c++,fortran --program-suffix=-10 --with-gmp=/usr/local/opt/gmp --with-mpfr=/usr/local/opt/mpfr --with-mpc=/usr/local/opt/libmpc --with-isl=/usr/local/opt/isl --with-system-zlib --with-pkgversion='Homebrew GCC 10.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues SED=/usr/bin/sed
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 10.2.0 (Homebrew GCC 10.2.0) 
+COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=10.11.0' '-asm_macosx_version_min=10.11' '-mtune=core2'
+ /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/cc1 -quiet -v -D__DYNAMIC__ /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpbase CMakeCCompilerABI.c -mmacosx-version-min=10.11.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o -version -fprofile-arcs -ftest-coverage -o /var/folders/0n/qz5ppjp50m3gbtzr8b5nndy40000gr/T//cckBuGhS.s
+GNU C17 (Homebrew GCC 10.2.0) version 10.2.0 (x86_64-apple-darwin15)
+	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.1.0, MPC version 1.2.0, isl version isl-0.22.1-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../x86_64-apple-darwin15/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include
+ /usr/local/include
+ /usr/local/Cellar/gcc/10.2.0/include
+ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include-fixed
+ /usr/include
+ /System/Library/Frameworks
+ /Library/Frameworks
+End of search list.
+GNU C17 (Homebrew GCC 10.2.0) version 10.2.0 (x86_64-apple-darwin15)
+	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.1.0, MPC version 1.2.0, isl version isl-0.22.1-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: cba020536c16cda63707f2044b2d2530
+COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=10.11.0'  '-mtune=core2'
+ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=10.11 -o CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o /var/folders/0n/qz5ppjp50m3gbtzr8b5nndy40000gr/T//cckBuGhS.s
+Apple LLVM version 8.0.0 (clang-800.0.42.1)
+Target: x86_64-apple-darwin15.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx10.11.0 -filetype obj -main-file-name cckBuGhS.s -target-cpu core2 -fdebug-compilation-dir /Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp -dwarf-debug-producer Apple LLVM version 8.0.0 (clang-800.0.42.1) -dwarf-version=2 -mrelocation-model pic -o CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o /var/folders/0n/qz5ppjp50m3gbtzr8b5nndy40000gr/T//cckBuGhS.s
+COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/
+LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../
+COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=10.11.0'  '-mtune=core2'
+Linking C executable cmTC_8bfaf
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8bfaf.dir/link.txt --verbose=1
+/usr/local/bin/gcc-10 --coverage  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o  -o cmTC_8bfaf 
+Using built-in specs.
+COLLECT_GCC=/usr/local/bin/gcc-10
+COLLECT_LTO_WRAPPER=/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/lto-wrapper
+Target: x86_64-apple-darwin15
+Configured with: ../configure --build=x86_64-apple-darwin15 --prefix=/usr/local/Cellar/gcc/10.2.0 --libdir=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10 --disable-nls --enable-checking=release --enable-languages=c,c++,objc,obj-c++,fortran --program-suffix=-10 --with-gmp=/usr/local/opt/gmp --with-mpfr=/usr/local/opt/mpfr --with-mpc=/usr/local/opt/libmpc --with-isl=/usr/local/opt/isl --with-system-zlib --with-pkgversion='Homebrew GCC 10.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues SED=/usr/bin/sed
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 10.2.0 (Homebrew GCC 10.2.0) 
+COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/
+LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../
+COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'cmTC_8bfaf' '-mmacosx-version-min=10.11.0' '-asm_macosx_version_min=10.11' '-mtune=core2'
+ /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 10.11.0 -weak_reference_mismatches non-weak -o cmTC_8bfaf -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o -lgcov -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+collect2 version 10.2.0
+/usr/bin/ld -dynamic -arch x86_64 -macosx_version_min 10.11.0 -weak_reference_mismatches non-weak -o cmTC_8bfaf -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o -lgcov -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+@(#)PROGRAM:ld  PROJECT:ld64-274.2
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+@(#)PROGRAM:ld  PROJECT:ld64-274.2
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0
+	/usr/local/Cellar/gcc/10.2.0/lib/gcc/10
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+gmake[1]: Leaving directory '/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include]
+    add: [/usr/local/include]
+    add: [/usr/local/Cellar/gcc/10.2.0/include]
+    add: [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include-fixed]
+    add: [/usr/include]
+    add: [/System/Library/Frameworks]
+    add: [/Library/Frameworks]
+  end of search list found
+  collapse include dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include] ==> [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/local/Cellar/gcc/10.2.0/include] ==> [/usr/local/Cellar/gcc/10.2.0/include]
+  collapse include dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include-fixed] ==> [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  collapse include dir [/System/Library/Frameworks] ==> [/System/Library/Frameworks]
+  collapse include dir [/Library/Frameworks] ==> [/Library/Frameworks]
+  implicit include dirs: [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include;/usr/local/include;/usr/local/Cellar/gcc/10.2.0/include;/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include-fixed;/usr/include;/System/Library/Frameworks;/Library/Frameworks]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/opt/local/bin/gmake cmTC_8bfaf/fast && /opt/local/bin/gmake  -f CMakeFiles/cmTC_8bfaf.dir/build.make CMakeFiles/cmTC_8bfaf.dir/build]
+  ignore line: [gmake[1]: Entering directory '/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/local/bin/gcc-10   --coverage    -v -Wl -v -o CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o   -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/local/bin/gcc-10]
+  ignore line: [Target: x86_64-apple-darwin15]
+  ignore line: [Configured with: ../configure --build=x86_64-apple-darwin15 --prefix=/usr/local/Cellar/gcc/10.2.0 --libdir=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10 --disable-nls --enable-checking=release --enable-languages=c c++ objc obj-c++ fortran --program-suffix=-10 --with-gmp=/usr/local/opt/gmp --with-mpfr=/usr/local/opt/mpfr --with-mpc=/usr/local/opt/libmpc --with-isl=/usr/local/opt/isl --with-system-zlib --with-pkgversion='Homebrew GCC 10.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues SED=/usr/bin/sed]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.2.0 (Homebrew GCC 10.2.0) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=10.11.0' '-asm_macosx_version_min=10.11' '-mtune=core2']
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/cc1 -quiet -v -D__DYNAMIC__ /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpbase CMakeCCompilerABI.c -mmacosx-version-min=10.11.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o -version -fprofile-arcs -ftest-coverage -o /var/folders/0n/qz5ppjp50m3gbtzr8b5nndy40000gr/T//cckBuGhS.s]
+  ignore line: [GNU C17 (Homebrew GCC 10.2.0) version 10.2.0 (x86_64-apple-darwin15)]
+  ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.2.0  MPFR version 4.1.0  MPC version 1.2.0  isl version isl-0.22.1-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../x86_64-apple-darwin15/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0/include]
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [ /System/Library/Frameworks]
+  ignore line: [ /Library/Frameworks]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (Homebrew GCC 10.2.0) version 10.2.0 (x86_64-apple-darwin15)]
+  ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.2.0  MPFR version 4.1.0  MPC version 1.2.0  isl version isl-0.22.1-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: cba020536c16cda63707f2044b2d2530]
+  ignore line: [COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=10.11.0'  '-mtune=core2']
+  ignore line: [ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=10.11 -o CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o /var/folders/0n/qz5ppjp50m3gbtzr8b5nndy40000gr/T//cckBuGhS.s]
+  ignore line: [Apple LLVM version 8.0.0 (clang-800.0.42.1)]
+  ignore line: [Target: x86_64-apple-darwin15.6.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
+  ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx10.11.0 -filetype obj -main-file-name cckBuGhS.s -target-cpu core2 -fdebug-compilation-dir /Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp -dwarf-debug-producer Apple LLVM version 8.0.0 (clang-800.0.42.1) -dwarf-version=2 -mrelocation-model pic -o CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o /var/folders/0n/qz5ppjp50m3gbtzr8b5nndy40000gr/T//cckBuGhS.s]
+  ignore line: [COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/]
+  ignore line: [LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../]
+  ignore line: [COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=10.11.0'  '-mtune=core2']
+  ignore line: [Linking C executable cmTC_8bfaf]
+  ignore line: [/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8bfaf.dir/link.txt --verbose=1]
+  ignore line: [/usr/local/bin/gcc-10 --coverage  -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o  -o cmTC_8bfaf ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/local/bin/gcc-10]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/lto-wrapper]
+  ignore line: [Target: x86_64-apple-darwin15]
+  ignore line: [Configured with: ../configure --build=x86_64-apple-darwin15 --prefix=/usr/local/Cellar/gcc/10.2.0 --libdir=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10 --disable-nls --enable-checking=release --enable-languages=c c++ objc obj-c++ fortran --program-suffix=-10 --with-gmp=/usr/local/opt/gmp --with-mpfr=/usr/local/opt/mpfr --with-mpc=/usr/local/opt/libmpc --with-isl=/usr/local/opt/isl --with-system-zlib --with-pkgversion='Homebrew GCC 10.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues SED=/usr/bin/sed]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.2.0 (Homebrew GCC 10.2.0) ]
+  ignore line: [COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/]
+  ignore line: [LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../]
+  ignore line: [COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'cmTC_8bfaf' '-mmacosx-version-min=10.11.0' '-asm_macosx_version_min=10.11' '-mtune=core2']
+  link line: [ /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 10.11.0 -weak_reference_mismatches non-weak -o cmTC_8bfaf -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o -lgcov -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v]
+    arg [/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/collect2] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.11.0] ==> ignore
+    arg [-weak_reference_mismatches] ==> ignore
+    arg [non-weak] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_8bfaf] ==> ignore
+    arg [-L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0] ==> dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0]
+    arg [-L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../..] ==> dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../..]
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_8bfaf.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcov] ==> lib [gcov]
+    arg [-lSystem] ==> lib [System]
+    arg [-lgcc_ext.10.5] ==> lib [gcc_ext.10.5]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lSystem] ==> lib [System]
+    arg [-no_compact_unwind] ==> ignore
+    arg [-v] ==> ignore
+  Library search paths: [;/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0;/usr/local/Cellar/gcc/10.2.0/lib/gcc/10;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [System]
+  collapse library dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0] ==> [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0]
+  collapse library dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../..] ==> [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10]
+  collapse library dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0] ==> [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0]
+  collapse library dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10] ==> [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: [gcov;gcc_ext.10.5;gcc]
+  implicit dirs: [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0;/usr/local/Cellar/gcc/10.2.0/lib/gcc/10;/usr/lib;/usr/local/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/local/bin/gmake cmTC_132bd/fast && /opt/local/bin/gmake  -f CMakeFiles/cmTC_132bd.dir/build.make CMakeFiles/cmTC_132bd.dir/build
+gmake[1]: Entering directory '/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_132bd.dir/testCXXCompiler.cxx.o
+/usr/local/bin/g++-10    --coverage    -o CMakeFiles/cmTC_132bd.dir/testCXXCompiler.cxx.o -c /Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_132bd
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_132bd.dir/link.txt --verbose=1
+/usr/local/bin/g++-10  --coverage  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_132bd.dir/testCXXCompiler.cxx.o  -o cmTC_132bd 
+gmake[1]: Leaving directory '/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/local/bin/gmake cmTC_689fa/fast && /opt/local/bin/gmake  -f CMakeFiles/cmTC_689fa.dir/build.make CMakeFiles/cmTC_689fa.dir/build
+gmake[1]: Entering directory '/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o
+/usr/local/bin/g++-10    --coverage    -v -Wl,-v -o CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/local/bin/g++-10
+Target: x86_64-apple-darwin15
+Configured with: ../configure --build=x86_64-apple-darwin15 --prefix=/usr/local/Cellar/gcc/10.2.0 --libdir=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10 --disable-nls --enable-checking=release --enable-languages=c,c++,objc,obj-c++,fortran --program-suffix=-10 --with-gmp=/usr/local/opt/gmp --with-mpfr=/usr/local/opt/mpfr --with-mpc=/usr/local/opt/libmpc --with-isl=/usr/local/opt/isl --with-system-zlib --with-pkgversion='Homebrew GCC 10.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues SED=/usr/bin/sed
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 10.2.0 (Homebrew GCC 10.2.0) 
+COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=10.11.0' '-asm_macosx_version_min=10.11' '-shared-libgcc' '-mtune=core2'
+ /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/cc1plus -quiet -v -D__DYNAMIC__ /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpbase CMakeCXXCompilerABI.cpp -mmacosx-version-min=10.11.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o -version -fprofile-arcs -ftest-coverage -o /var/folders/0n/qz5ppjp50m3gbtzr8b5nndy40000gr/T//ccvyCw6D.s
+GNU C++14 (Homebrew GCC 10.2.0) version 10.2.0 (x86_64-apple-darwin15)
+	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.1.0, MPC version 1.2.0, isl version isl-0.22.1-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../x86_64-apple-darwin15/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../include/c++/10.2.0
+ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../include/c++/10.2.0/x86_64-apple-darwin15
+ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../include/c++/10.2.0/backward
+ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include
+ /usr/local/include
+ /usr/local/Cellar/gcc/10.2.0/include
+ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include-fixed
+ /usr/include
+ /System/Library/Frameworks
+ /Library/Frameworks
+End of search list.
+GNU C++14 (Homebrew GCC 10.2.0) version 10.2.0 (x86_64-apple-darwin15)
+	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.1.0, MPC version 1.2.0, isl version isl-0.22.1-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: b9aea60adaeb12afa46f70d65ee51c54
+COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=10.11.0'  '-shared-libgcc' '-mtune=core2'
+ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=10.11 -o CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o /var/folders/0n/qz5ppjp50m3gbtzr8b5nndy40000gr/T//ccvyCw6D.s
+Apple LLVM version 8.0.0 (clang-800.0.42.1)
+Target: x86_64-apple-darwin15.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx10.11.0 -filetype obj -main-file-name ccvyCw6D.s -target-cpu core2 -fdebug-compilation-dir /Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp -dwarf-debug-producer Apple LLVM version 8.0.0 (clang-800.0.42.1) -dwarf-version=2 -mrelocation-model pic -o CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o /var/folders/0n/qz5ppjp50m3gbtzr8b5nndy40000gr/T//ccvyCw6D.s
+COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/
+LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../
+COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=10.11.0'  '-shared-libgcc' '-mtune=core2'
+Linking CXX executable cmTC_689fa
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_689fa.dir/link.txt --verbose=1
+/usr/local/bin/g++-10  --coverage  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_689fa 
+Using built-in specs.
+COLLECT_GCC=/usr/local/bin/g++-10
+COLLECT_LTO_WRAPPER=/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/lto-wrapper
+Target: x86_64-apple-darwin15
+Configured with: ../configure --build=x86_64-apple-darwin15 --prefix=/usr/local/Cellar/gcc/10.2.0 --libdir=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10 --disable-nls --enable-checking=release --enable-languages=c,c++,objc,obj-c++,fortran --program-suffix=-10 --with-gmp=/usr/local/opt/gmp --with-mpfr=/usr/local/opt/mpfr --with-mpc=/usr/local/opt/libmpc --with-isl=/usr/local/opt/isl --with-system-zlib --with-pkgversion='Homebrew GCC 10.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues SED=/usr/bin/sed
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 10.2.0 (Homebrew GCC 10.2.0) 
+COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/
+LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../
+COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'cmTC_689fa' '-mmacosx-version-min=10.11.0' '-asm_macosx_version_min=10.11' '-shared-libgcc' '-mtune=core2'
+ /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 10.11.0 -weak_reference_mismatches non-weak -o cmTC_689fa -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lgcov -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+collect2 version 10.2.0
+/usr/bin/ld -dynamic -arch x86_64 -macosx_version_min 10.11.0 -weak_reference_mismatches non-weak -o cmTC_689fa -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lgcov -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+@(#)PROGRAM:ld  PROJECT:ld64-274.2
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+@(#)PROGRAM:ld  PROJECT:ld64-274.2
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0
+	/usr/local/Cellar/gcc/10.2.0/lib/gcc/10
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+gmake[1]: Leaving directory '/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../include/c++/10.2.0]
+    add: [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../include/c++/10.2.0/x86_64-apple-darwin15]
+    add: [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../include/c++/10.2.0/backward]
+    add: [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include]
+    add: [/usr/local/include]
+    add: [/usr/local/Cellar/gcc/10.2.0/include]
+    add: [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include-fixed]
+    add: [/usr/include]
+    add: [/System/Library/Frameworks]
+    add: [/Library/Frameworks]
+  end of search list found
+  collapse include dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../include/c++/10.2.0] ==> [/usr/local/Cellar/gcc/10.2.0/include/c++/10.2.0]
+  collapse include dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../include/c++/10.2.0/x86_64-apple-darwin15] ==> [/usr/local/Cellar/gcc/10.2.0/include/c++/10.2.0/x86_64-apple-darwin15]
+  collapse include dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../include/c++/10.2.0/backward] ==> [/usr/local/Cellar/gcc/10.2.0/include/c++/10.2.0/backward]
+  collapse include dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include] ==> [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/local/Cellar/gcc/10.2.0/include] ==> [/usr/local/Cellar/gcc/10.2.0/include]
+  collapse include dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include-fixed] ==> [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  collapse include dir [/System/Library/Frameworks] ==> [/System/Library/Frameworks]
+  collapse include dir [/Library/Frameworks] ==> [/Library/Frameworks]
+  implicit include dirs: [/usr/local/Cellar/gcc/10.2.0/include/c++/10.2.0;/usr/local/Cellar/gcc/10.2.0/include/c++/10.2.0/x86_64-apple-darwin15;/usr/local/Cellar/gcc/10.2.0/include/c++/10.2.0/backward;/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include;/usr/local/include;/usr/local/Cellar/gcc/10.2.0/include;/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include-fixed;/usr/include;/System/Library/Frameworks;/Library/Frameworks]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/opt/local/bin/gmake cmTC_689fa/fast && /opt/local/bin/gmake  -f CMakeFiles/cmTC_689fa.dir/build.make CMakeFiles/cmTC_689fa.dir/build]
+  ignore line: [gmake[1]: Entering directory '/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/local/bin/g++-10    --coverage    -v -Wl -v -o CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/local/bin/g++-10]
+  ignore line: [Target: x86_64-apple-darwin15]
+  ignore line: [Configured with: ../configure --build=x86_64-apple-darwin15 --prefix=/usr/local/Cellar/gcc/10.2.0 --libdir=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10 --disable-nls --enable-checking=release --enable-languages=c c++ objc obj-c++ fortran --program-suffix=-10 --with-gmp=/usr/local/opt/gmp --with-mpfr=/usr/local/opt/mpfr --with-mpc=/usr/local/opt/libmpc --with-isl=/usr/local/opt/isl --with-system-zlib --with-pkgversion='Homebrew GCC 10.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues SED=/usr/bin/sed]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.2.0 (Homebrew GCC 10.2.0) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=10.11.0' '-asm_macosx_version_min=10.11' '-shared-libgcc' '-mtune=core2']
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/cc1plus -quiet -v -D__DYNAMIC__ /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpbase CMakeCXXCompilerABI.cpp -mmacosx-version-min=10.11.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o -version -fprofile-arcs -ftest-coverage -o /var/folders/0n/qz5ppjp50m3gbtzr8b5nndy40000gr/T//ccvyCw6D.s]
+  ignore line: [GNU C++14 (Homebrew GCC 10.2.0) version 10.2.0 (x86_64-apple-darwin15)]
+  ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.2.0  MPFR version 4.1.0  MPC version 1.2.0  isl version isl-0.22.1-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../x86_64-apple-darwin15/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../include/c++/10.2.0]
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../include/c++/10.2.0/x86_64-apple-darwin15]
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../../../../include/c++/10.2.0/backward]
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0/include]
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [ /System/Library/Frameworks]
+  ignore line: [ /Library/Frameworks]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++14 (Homebrew GCC 10.2.0) version 10.2.0 (x86_64-apple-darwin15)]
+  ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.2.0  MPFR version 4.1.0  MPC version 1.2.0  isl version isl-0.22.1-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: b9aea60adaeb12afa46f70d65ee51c54]
+  ignore line: [COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=10.11.0'  '-shared-libgcc' '-mtune=core2']
+  ignore line: [ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=10.11 -o CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o /var/folders/0n/qz5ppjp50m3gbtzr8b5nndy40000gr/T//ccvyCw6D.s]
+  ignore line: [Apple LLVM version 8.0.0 (clang-800.0.42.1)]
+  ignore line: [Target: x86_64-apple-darwin15.6.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
+  ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx10.11.0 -filetype obj -main-file-name ccvyCw6D.s -target-cpu core2 -fdebug-compilation-dir /Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/CMakeTmp -dwarf-debug-producer Apple LLVM version 8.0.0 (clang-800.0.42.1) -dwarf-version=2 -mrelocation-model pic -o CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o /var/folders/0n/qz5ppjp50m3gbtzr8b5nndy40000gr/T//ccvyCw6D.s]
+  ignore line: [COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/]
+  ignore line: [LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../]
+  ignore line: [COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=10.11.0'  '-shared-libgcc' '-mtune=core2']
+  ignore line: [Linking CXX executable cmTC_689fa]
+  ignore line: [/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_689fa.dir/link.txt --verbose=1]
+  ignore line: [/usr/local/bin/g++-10  --coverage  -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_689fa ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/local/bin/g++-10]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/lto-wrapper]
+  ignore line: [Target: x86_64-apple-darwin15]
+  ignore line: [Configured with: ../configure --build=x86_64-apple-darwin15 --prefix=/usr/local/Cellar/gcc/10.2.0 --libdir=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10 --disable-nls --enable-checking=release --enable-languages=c c++ objc obj-c++ fortran --program-suffix=-10 --with-gmp=/usr/local/opt/gmp --with-mpfr=/usr/local/opt/mpfr --with-mpc=/usr/local/opt/libmpc --with-isl=/usr/local/opt/isl --with-system-zlib --with-pkgversion='Homebrew GCC 10.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues SED=/usr/bin/sed]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.2.0 (Homebrew GCC 10.2.0) ]
+  ignore line: [COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/]
+  ignore line: [LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/:/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../../]
+  ignore line: [COLLECT_GCC_OPTIONS='-coverage' '-v' '-o' 'cmTC_689fa' '-mmacosx-version-min=10.11.0' '-asm_macosx_version_min=10.11' '-shared-libgcc' '-mtune=core2']
+  link line: [ /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 10.11.0 -weak_reference_mismatches non-weak -o cmTC_689fa -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lgcov -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v]
+    arg [/usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin15/10.2.0/collect2] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.11.0] ==> ignore
+    arg [-weak_reference_mismatches] ==> ignore
+    arg [non-weak] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_689fa] ==> ignore
+    arg [-L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0] ==> dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0]
+    arg [-L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../..] ==> dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../..]
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_689fa.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lgcov] ==> lib [gcov]
+    arg [-lSystem] ==> lib [System]
+    arg [-lgcc_ext.10.5] ==> lib [gcc_ext.10.5]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lSystem] ==> lib [System]
+    arg [-no_compact_unwind] ==> ignore
+    arg [-v] ==> ignore
+  Library search paths: [;/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0;/usr/local/Cellar/gcc/10.2.0/lib/gcc/10;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [System]
+  collapse library dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0] ==> [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0]
+  collapse library dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0/../../..] ==> [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10]
+  collapse library dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0] ==> [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0]
+  collapse library dir [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10] ==> [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: [stdc++;gcov;gcc_ext.10.5;gcc]
+  implicit dirs: [/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin15/10.2.0;/usr/local/Cellar/gcc/10.2.0/lib/gcc/10;/usr/lib;/usr/local/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+

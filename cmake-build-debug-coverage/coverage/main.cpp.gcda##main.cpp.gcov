@@ -1,0 +1,101 @@
+        -:    0:Source:/Users/adrian2013/CLionProjects/test/main.cpp
+        -:    0:Graph:/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/test.dir/main.cpp.gcno
+        -:    0:Data:/Users/adrian2013/CLionProjects/test/cmake-build-debug-coverage/CMakeFiles/test.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "container_o_stream.h"
+        -:    2:
+        -:    3:
+        1:    4:int main() {
+        2:    5:    std::list l{1, 2, 3, 5, 5};
+        1:    5-block  0
+    $$$$$:    5-block  1
+    $$$$$:    5-block  2
+        1:    6:    std::cout << l << "\n";
+        1:    6-block  0
+        -:    7:
+        -:    8:
+        2:    9:    std::forward_list fl{1, 3, 3, 335, 5};
+        1:    9-block  0
+    $$$$$:    9-block  1
+    $$$$$:    9-block  2
+        1:   10:    std::cout << fl << "\n";
+        1:   10-block  0
+        -:   11:
+        2:   12:    std::deque d{1, 83, 3, 335, 5};
+        1:   12-block  0
+    $$$$$:   12-block  1
+    $$$$$:   12-block  2
+        1:   13:    std::cout << d << "\n";
+        1:   13-block  0
+        -:   14:
+        -:   15:
+        1:   16:    std::tuple pa{"hi", 23, 1.1, std::pair(13, "bye")};
+        1:   17:    std::cout << pa << "\n";
+        1:   17-block  0
+        1:   17-block  1
+        -:   18:
+        2:   19:    std::vector vec{4, 2, 17, 14, 15};
+        1:   19-block  0
+    $$$$$:   19-block  1
+    $$$$$:   19-block  2
+        1:   20:    std::cout << vec << "\n";
+        1:   20-block  0
+        -:   21:
+        1:   22:    std::array ar{1, 4, 2, 17, 11, 15};
+        1:   23:    std::cout << ar << "\n";
+        1:   23-block  0
+        1:   23-block  1
+        -:   24:
+        2:   25:    std::set set{1, 4, 2, 17, 17, 11, 15};
+        1:   25-block  0
+    $$$$$:   25-block  1
+    $$$$$:   25-block  2
+    $$$$$:   25-block  3
+        1:   26:    std::cout << set << "\n";
+        1:   26-block  0
+        -:   27:
+        2:   28:    std::multiset mset{2, 4, 2, 17, 17, 11, 15};
+        1:   28-block  0
+    $$$$$:   28-block  1
+    $$$$$:   28-block  2
+    $$$$$:   28-block  3
+        1:   29:    std::cout << mset << "\n";
+        1:   29-block  0
+        -:   30:
+        -:   31:    std::map<char, int> map{{'a', 1},
+        2:   32:                            {'b', 2}};
+        1:   32-block  0
+    $$$$$:   32-block  1
+    $$$$$:   32-block  2
+    $$$$$:   32-block  3
+        1:   33:    std::cout << map << "\n";
+        1:   33-block  0
+        -:   34:
+        -:   35:    const std::unordered_map<char, int> umap{{'a', 4},
+        2:   36:                                       {'5', 2}};
+        1:   36-block  0
+    $$$$$:   36-block  1
+    $$$$$:   36-block  2
+    $$$$$:   36-block  3
+    $$$$$:   36-block  4
+        1:   37:    std::cout << umap << "\n";
+        1:   37-block  0
+        -:   38:
+        -:   39:    std::multimap<char, int> mmap{{'a', 4},
+        -:   40:                                  {'b', 2},
+        1:   41:                                  {'a', 5}};
+        1:   41-block  0
+    $$$$$:   41-block  1
+    $$$$$:   41-block  2
+    $$$$$:   41-block  3
+        1:   42:    std::cout << mmap << "\n";
+        1:   42-block  0
+        -:   43:
+        1:   44:    std::array data{std::pair(1, 3), std::pair(3, 4)};
+        1:   45:    std::cout << data;
+        1:   45-block  0
+        -:   46:
+        -:   47:
+        1:   48:    return 0;
+        1:   48-block  0
+        -:   49:}

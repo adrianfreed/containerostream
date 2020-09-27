@@ -39,7 +39,7 @@ namespace containerstream {
 }
 ///  readable text for container content:  tuples
 template<typename ...Types>
-auto &operator<<(std::ostream &os, const std::tuple<Types ...> &t) {
+auto &operator<<(  std::ostream &os, const std::tuple<Types ...> &t) {
     os << "(T ";
     containerstream::tupleElementPrint(t, os);
     os << ")";
@@ -50,7 +50,7 @@ namespace containerstream {
 
 ///  maps have key:value pairs
     template<typename C>
-    std::ostream &maphelper(std::ostream &os, C &v,
+    const std::ostream &maphelper(std::ostream &os, C &v,
                             const char *first,
                             const char *separator=", ",
                             const char *last="]") {
@@ -66,17 +66,17 @@ namespace containerstream {
 }
 ///  readable text for container content:  unordered_maps
 template<typename T, typename Tbis>
-std::ostream &operator<<(std::ostream &os, const std::unordered_map<T, Tbis> &v) {
+std::ostream &operator<<(const std::ostream &os, const std::unordered_map<T, Tbis> &v) {
     return containerstream::maphelper(os, v, "[Unorderedmap ");
 }
 ///  readable text for container content:  maps
 template<typename T, typename Tbis>
-std::ostream &operator<<(std::ostream &os, const std::map<T, Tbis> &v) {
+std::ostream &operator<<(const std::ostream &os, const std::map<T, Tbis> &v) {
     return containerstream::maphelper(os, v, "[Map ", ", ", "]");
 }
 ///  readable text for container content:  multimap
 template<typename T, typename Tbis>
-std::ostream &operator<<(std::ostream &os, const std::multimap<T, Tbis> &v) {
+std::ostream &operator<<(const std::ostream &os, const std::multimap<T, Tbis> &v) {
     return containerstream::maphelper(os, v, "[Multimap ", ", ", "]");
 }
 
@@ -84,8 +84,8 @@ namespace containerstream {
 
 // Most containers are just output as a bracketed, sequence with a separator
     template<typename C>
-    std::ostream &
-    arrayhelper(std::ostream &os, C &v,
+     std::ostream &
+    arrayhelper( std::ostream &os, C &v,
                 const char *first,
                 const char *separator= ", ",
                 const char *last="]") {
@@ -107,38 +107,38 @@ namespace containerstream {
 
 ///  readable text for container content:  Array
 template<typename T, std::size_t N>
-auto &operator<<(std::ostream &os, const std::array<T, N> &a) {
+auto &operator<<(const std::ostream &os, const std::array<T, N> &a) {
     return containerstream::arrayhelper(os, a, "[Array ");
 }
 
 ///  readable text for container content:  Vector
 template<typename T>
-std::ostream &operator<<(std::ostream &os, const std::vector<T> &v) {
+std::ostream &operator<<(const std::ostream &os, const std::vector<T> &v) {
     return containerstream::arrayhelper(os, v, "[Vector ");
 }
 ///  readable text for container content:  Set
 template<typename T>
-std::ostream &operator<<(std::ostream &os, const std::set<T> &v) {
+std::ostream &operator<<(const std::ostream &os, const std::set<T> &v) {
     return containerstream::arrayhelper(os, v, "[Set ");
 }
 ///  readable text for container content:  Multiset
 template<typename T>
-std::ostream &operator<<(std::ostream &os, const std::multiset<T> &v) {
+std::ostream &operator<<(const std::ostream &os, const std::multiset<T> &v) {
     return containerstream::arrayhelper(os, v, "[Multiset ");
 }
 ///  readable text for container content:  List
 template<typename T>
-std::ostream &operator<<(std::ostream &os, const std::list<T> &l) {
+std::ostream &operator<<(const std::ostream &os, const std::list<T> &l) {
     return containerstream::arrayhelper(os, l, "(List ", ", ", ")");
 }
 ///  readable text for container content:  Forward lists
 template<typename T>
-std::ostream &operator<<(std::ostream &os, const std::forward_list<T> &l) {
+std::ostream &operator<<(const std::ostream &os, const std::forward_list<T> &l) {
     return containerstream::arrayhelper(os, l, "(ForwardList ", ", ", ")");
 }
 ///  readable text for container content:  Deque
 template<typename T>
-std::ostream &operator<<(std::ostream &os, const std::deque<T> &d) {
+std::ostream &operator<<(const std::ostream &os, const std::deque<T> &d) {
     return containerstream::arrayhelper(os, d, "(Deque ", ", ", ")");
 }
 

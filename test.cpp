@@ -61,48 +61,42 @@ void basicexamples()
 
 
 namespace pointexample {
-template<typename T=double, int N = 3>
+// Custom class: model a range and give it a label via the style trait.
+// No bespoke operator<< needed — the single concept-constrained overload
+// in container_o_stream.h handles it.
+template<typename T = double, int N = 3>
 struct point {
     static_assert(std::is_arithmetic_v<T>, "arithmetic type required");
     std::array<T, N> data;
 
     template<typename... Args>
-    explicit point(Args... args) : data({args...}) {
-    };
+    explicit point(Args... args) : data({args...}) {}
 
-    point<T, N> &operator+=(point<T, N> const &rhs) &{
-        for (auto i = 0; i < N; ++i)
-            data[i] += rhs.data[i];
+    // Model std::ranges::range so the generic operator<< picks us up.
+    auto begin() const { return data.begin(); }
+    auto end()   const { return data.end();   }
 
+    point& operator+=(point const& rhs) & {
+        for (int i = 0; i < N; ++i) data[i] += rhs.data[i];
         return *this;
     }
+    friend point operator+(point lhs, point const& rhs) { lhs += rhs; return lhs; }
 
-    friend point<T, N> operator+(point<T, N> lhs, point<T, N> const &rhs) {
-        lhs += rhs;
-        return lhs;
-    }
-
-    point<T, N> &operator*=(const point<T, N> &rhs) &{
-        for (auto i = 0; i < N; ++i)
-            data[i] *= rhs.data[i];
-
+    point& operator*=(point const& rhs) & {
+        for (int i = 0; i < N; ++i) data[i] *= rhs.data[i];
         return *this;
     }
-
-    friend point<T, N> operator*(point<T, N> lhs, const point<T, N> &rhs) {
-        lhs *= rhs;
-        return lhs;
-    }
+    friend point operator*(point lhs, point const& rhs) { lhs *= rhs; return lhs; }
 };
+}  // namespace pointexample
 
+// Give point its label. One specialization, no operator<<.
 template<typename T, int N>
-std::ostream &operator<<(std::ostream &os, point<T, N> d) {
-    return containerstream::arrayhelper(os, d.data, "[point ");
-}
-
-
-
-}
+struct containerstream::style<pointexample::point<T, N>> {
+    static constexpr const char* open  = "[point ";
+    static constexpr const char* close = "]";
+    static constexpr const char* sep   = ", ";
+};
 
 void customclassexample() {
     using namespace pointexample;

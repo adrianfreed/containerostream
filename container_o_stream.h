@@ -1,145 +1,150 @@
 ///
 // Created by AdrianFreed on 9/24/20.
 // << overloads for printing containers
-// requires C++17
+// C++20 modernization: concepts + ranges + std::apply fold
+//
+// Pedagogical notes (vs. the original C++17 version):
+//   * 8 near-identical operator<< overloads (vector/set/list/deque/...)
+//     collapse to ONE template constrained by std::ranges::input_range.
+//   * The recursive tupleElementPrint helper is replaced by std::apply
+//     plus a C++17 fold expression. (Valid in C++17 but more idiomatic
+//     once you have ranges to lean on for the rest.)
+//   * Per-container labels move into a tiny customization-point trait,
+//     so adding a new container is a 1-line specialization, not a 4-line
+//     operator<<.
+//   * The single overload is constrained to exclude std::string and
+//     anything convertible to std::string_view, so we don't hijack
+//     string output.
 //
 
-#ifndef TEST_CONTAINER_O_STREAM_H
-#define TEST_CONTAINER_O_STREAM_H
-#include <iostream>
+#ifndef CONTAINEROSTREAM_H
+#define CONTAINEROSTREAM_H
+
 #include <array>
-#include <vector>
-#include <set>
-#include <unordered_set>
-#include <map>
-#include <unordered_map>
-#include <tuple>
+#include <concepts>
 #include <deque>
-#include <list>
 #include <forward_list>
-
-// readable text for container content:  pairs
-template<typename TA, typename TB>
-auto &operator<<(std::ostream &os, const std::pair<TA, TB> &p) {
-    os << '(' << p.first << ',' << p.second << ')';
-    return os;
-}
+#include <iostream>
+#include <list>
+#include <map>
+#include <ranges>
+#include <set>
+#include <string>
+#include <string_view>
+#include <tuple>
+#include <type_traits>
+#include <unordered_map>
+#include <unordered_set>
+#include <utility>
+#include <vector>
 
 namespace containerstream {
-/// variadic template metaprogram to iterate over the tuple elements
-// requires C++17, replace with messier folds if using earlier version
-    template<size_t I = 0, typename... Tp>
-    void tupleElementPrint(const std::tuple<Tp...> &t, std::ostream &os) {
-        os << std::get<I>(t);
-        if constexpr(I + 1 != sizeof...(Tp)) {
-            os << ", ";
-            tupleElementPrint<I + 1>(t, os);
-        }
-    }
+
+// Per-container styling. Default is a square-bracketed list.
+// Specialize this trait to give a container a custom label or brackets.
+template <typename C>
+struct style {
+    static constexpr const char* open  = "[";
+    static constexpr const char* close = "]";
+    static constexpr const char* sep   = ", ";
+};
+
+// Sequence-style
+template <typename T, typename A> struct style<std::vector<T, A>> {
+    static constexpr const char* open = "[Vector ";       static constexpr const char* close = "]"; static constexpr const char* sep = ", ";
+};
+template <typename T, std::size_t N> struct style<std::array<T, N>> {
+    static constexpr const char* open = "[Array ";        static constexpr const char* close = "]"; static constexpr const char* sep = ", ";
+};
+template <typename T, typename A> struct style<std::deque<T, A>> {
+    static constexpr const char* open = "(Deque ";        static constexpr const char* close = ")"; static constexpr const char* sep = ", ";
+};
+template <typename T, typename A> struct style<std::list<T, A>> {
+    static constexpr const char* open = "(List ";         static constexpr const char* close = ")"; static constexpr const char* sep = ", ";
+};
+template <typename T, typename A> struct style<std::forward_list<T, A>> {
+    static constexpr const char* open = "(ForwardList ";  static constexpr const char* close = ")"; static constexpr const char* sep = ", ";
+};
+
+// Set-style
+template <typename T, typename C, typename A> struct style<std::set<T, C, A>> {
+    static constexpr const char* open = "[Set ";          static constexpr const char* close = "]"; static constexpr const char* sep = ", ";
+};
+template <typename T, typename C, typename A> struct style<std::multiset<T, C, A>> {
+    static constexpr const char* open = "[Multiset ";     static constexpr const char* close = "]"; static constexpr const char* sep = ", ";
+};
+template <typename T, typename H, typename E, typename A> struct style<std::unordered_set<T, H, E, A>> {
+    static constexpr const char* open = "[UnorderedSet "; static constexpr const char* close = "]"; static constexpr const char* sep = ", ";
+};
+
+// Map-style (key:value pairs)
+template <typename K, typename V, typename C, typename A> struct style<std::map<K, V, C, A>> {
+    static constexpr const char* open = "[Map ";          static constexpr const char* close = "]"; static constexpr const char* sep = ", ";
+};
+template <typename K, typename V, typename C, typename A> struct style<std::multimap<K, V, C, A>> {
+    static constexpr const char* open = "[Multimap ";     static constexpr const char* close = "]"; static constexpr const char* sep = ", ";
+};
+template <typename K, typename V, typename H, typename E, typename A> struct style<std::unordered_map<K, V, H, E, A>> {
+    static constexpr const char* open = "[Unorderedmap "; static constexpr const char* close = "]"; static constexpr const char* sep = ", ";
+};
+
+// Concept: a printable container is any input_range we haven't already
+// promised to stream as text. Excluding string-like types prevents this
+// overload from stealing std::string / std::string_view output.
+template <typename T>
+concept printable_container =
+    std::ranges::input_range<T> &&
+    !std::convertible_to<std::remove_cvref_t<T>, std::string_view> &&
+    !std::is_array_v<std::remove_cvref_t<T>>;
+
+// Map-like: an associative container with key->value mapping
+// (std::map, std::multimap, std::unordered_map, std::unordered_multimap).
+// Detected via the standard mapped_type/key_type member typedefs, which
+// distinguishes a real map from a sequence-of-pairs like std::vector<pair>.
+template <typename R>
+concept map_like = requires {
+    typename std::remove_cvref_t<R>::key_type;
+    typename std::remove_cvref_t<R>::mapped_type;
+};
+
+}  // namespace containerstream
+
+// std::pair — printed as (first,second)
+template <typename A, typename B>
+std::ostream& operator<<(std::ostream& os, const std::pair<A, B>& p) {
+    return os << '(' << p.first << ',' << p.second << ')';
 }
-///  readable text for container content:  tuples
-template<typename ...Types>
-auto &operator<<(  std::ostream &os, const std::tuple<Types ...> &t) {
+
+// std::tuple — printed as (T a, b, c) using std::apply + fold expression.
+// Replaces the original recursive tupleElementPrint<> helper.
+template <typename... Ts>
+std::ostream& operator<<(std::ostream& os, const std::tuple<Ts...>& t) {
     os << "(T ";
-    containerstream::tupleElementPrint(t, os);
-    os << ")";
-    return os;
+    std::apply(
+        [&os](const auto&... xs) {
+            std::size_t n = 0;
+            (((n++ ? os << ", " : os) << xs), ...);
+        },
+        t);
+    return os << ")";
 }
 
-namespace containerstream {
-
-///  maps have key:value pairs
-    template<typename C>
-     std::ostream &maphelper(std::ostream &os, C &v,
-                            const char *first,
-                            const char *separator=", ",
-                            const char *last="]") {
-        os << first;
-        for (auto it = v.cbegin(); it != v.cend(); ++it) {
-            os << it->first << ':' << it->second;
-            if (std::next(it) != v.cend())
-                os << separator;
-        }
-        os << last;
-        return os;
+// One template for every range-shaped container.
+// Replaces 8 separate operator<< overloads in the C++17 version.
+template <containerstream::printable_container C>
+std::ostream& operator<<(std::ostream& os, const C& c) {
+    using S = containerstream::style<std::remove_cvref_t<C>>;
+    os << S::open;
+    bool first = true;
+    for (const auto& x : c) {
+        if (!first) os << S::sep;
+        if constexpr (containerstream::map_like<C>)
+            os << x.first << ':' << x.second;
+        else
+            os << x;
+        first = false;
     }
-}
-///  readable text for container content:  unordered_maps
-template<typename T, typename Tbis>
-std::ostream &operator<<(std::ostream &os, const std::unordered_map<T, Tbis> &v) {
-    return containerstream::maphelper(os, v, "[Unorderedmap ");
-}
-///  readable text for container content:  maps
-template<typename T, typename Tbis>
-std::ostream &operator<<(std::ostream &os, const std::map<T, Tbis> &v) {
-    return containerstream::maphelper(os, v, "[Map ", ", ", "]");
-}
-///  readable text for container content:  multimap
-template<typename T, typename Tbis>
-std::ostream &operator<<(std::ostream &os, const std::multimap<T, Tbis> &v) {
-    return containerstream::maphelper(os, v, "[Multimap ", ", ", "]");
+    return os << S::close;
 }
 
-namespace containerstream {
-
-// Most containers are just output as a bracketed, sequence with a separator
-    template<typename C>
-     std::ostream &
-    arrayhelper( std::ostream &os, C &v,
-                const char *first,
-                const char *separator= ", ",
-                const char *last="]") {
-        os << first;
-        for (auto it = v.cbegin(); it != v.cend(); ++it) {
-            os << *it;
-            if (std::next(it) != v.cend())
-                os << separator;
-        }
-        os << last;
-        return os;
-    }
-
-}
-
-// There may appear to be a lot of repetition in these functions
-// The idea behind that is that you are invited to change the styling of
-// each separator and bracket according to your own aesthetics or conventions
-
-///  readable text for container content:  Array
-template<typename T, std::size_t N>
-auto &operator<<(std::ostream &os, const std::array<T, N> &a) {
-    return containerstream::arrayhelper(os, a, "[Array ");
-}
-
-///  readable text for container content:  Vector
-template<typename T>
-std::ostream &operator<<(std::ostream &os, const std::vector<T> &v) {
-    return containerstream::arrayhelper(os, v, "[Vector ");
-}
-///  readable text for container content:  Set
-template<typename T>
-std::ostream &operator<<(std::ostream &os, const std::set<T> &v) {
-    return containerstream::arrayhelper(os, v, "[Set ");
-}
-///  readable text for container content:  Multiset
-template<typename T>
-std::ostream &operator<<(std::ostream &os, const std::multiset<T> &v) {
-    return containerstream::arrayhelper(os, v, "[Multiset ");
-}
-///  readable text for container content:  List
-template<typename T>
-std::ostream &operator<<(std::ostream &os, const std::list<T> &l) {
-    return containerstream::arrayhelper(os, l, "(List ", ", ", ")");
-}
-///  readable text for container content:  Forward lists
-template<typename T>
-std::ostream &operator<<(std::ostream &os, const std::forward_list<T> &l) {
-    return containerstream::arrayhelper(os, l, "(ForwardList ", ", ", ")");
-}
-///  readable text for container content:  Deque
-template<typename T>
-std::ostream &operator<<( std::ostream &os, const std::deque<T> &d) {
-    return containerstream::arrayhelper(os, d, "(Deque ", ", ", ")");
-}
-
-#endif //TEST_CONTAINER_O_STREAM_H
+#endif  // CONTAINEROSTREAM_H
